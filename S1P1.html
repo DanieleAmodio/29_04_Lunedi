@@ -440,8 +440,9 @@ body footer p a:last-child {
             rimozioneclick()
             
          }
-
+         
         // EXTRA Crea con JavaScript la funzionalità per rimuovere il corrispondente elemento padre dal DOM cliccando sul link "Continua a leggere".
+        
         function rimozioneclick(){
         let rimozione= document.querySelectorAll(".stretched-link ")
         rimozione.forEach(element => {
@@ -450,13 +451,16 @@ body footer p a:last-child {
             element.addEventListener("click",elimina(element))
             
         });
+        
         }
-     
         function elimina(element){
             
-           let padre=element.parentNode
-            padre.remove()
-        }
+            let padre=element.parentNode
+             padre.remove()
+         }
+        
+     
+       
        
 
         // EXTRA Crea con JavaScript la funzionalità per creare un alert col nome dell'autore ogni volta che il cursore passa sopra l'autore del post.
