@@ -437,14 +437,27 @@ body footer p a:last-child {
          }
          window.onload= function(){
             rimozione()
-            rimozioneclick()
+            
             
          }
          
         // EXTRA Crea con JavaScript la funzionalità per rimuovere il corrispondente elemento padre dal DOM cliccando sul link "Continua a leggere".
+        for (let link of document.querySelectorAll(".stretched-link"))
+                link.onclick = function (event) {
+                    event.preventDefault() 
+                    console.log(event.target)
+                    event.target.closest(".col-md-6").remove();
+                }
         
-        function rimozioneclick(){
-        let rimozione= document.querySelectorAll(".stretched-link ")
+        
+        /*let link= document.querySelectorAll(".stretched-link ").onclick(rimozioneclick())
+        function rimozioneclick(link){
+        for(let linki in link){
+           console.log(linki)
+           linki.onclick= elimina(linki)
+        }
+    }
+        
         rimozione.forEach(element => {
             console.log(element)
             
@@ -452,19 +465,25 @@ body footer p a:last-child {
             
         });
         
-        }
+        } 
         function elimina(element){
             
             let padre=element.parentNode
              padre.remove()
-         }
+         } */
         
      
        
        
 
         // EXTRA Crea con JavaScript la funzionalità per creare un alert col nome dell'autore ogni volta che il cursore passa sopra l'autore del post.
+        for (let autore of document.querySelectorAll(".blog-post-meta a")) {
+                autore.addEventListener("mouseover", function (event) {
+                    alert(event.target.innerText);
+                });
+        }
 
+        
     </script>
 </body>
 
